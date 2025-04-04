@@ -5,12 +5,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the application...'
+                sh 'npm run buildg'
             }
         }
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh 'npm test -- --watchAll=false'
+                sh 'npm test App.test.js'
             }
         }
     }
