@@ -18,4 +18,16 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+            echo 'Pipeline completed - check logs for details'
+        }
+        success {
+            echo 'Build and tests passed successfully! ✅'
+        }
+        failure {
+            echo 'Build or tests failed! ❌'
+        }
+    }
 }
